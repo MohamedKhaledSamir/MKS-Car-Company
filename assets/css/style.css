@@ -1,0 +1,462 @@
+/*------------ RESET AND GLOBAL --------------------
+------------------------------------- */
+
+*,
+*::before,
+*::after {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.2s;
+}
+a,
+button {
+  cursor: pointer;
+}
+p,
+img {
+  display: block;
+}
+button {
+  background: none;
+  border: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+/*------------ HEADER --------------------
+------------------------------------- */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.97);
+  padding-bottom: 30px;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 500;
+}
+@media only screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  header nav a {
+    font-size: 15px;
+  }
+}
+
+nav a {
+  font-size: clamp(20px, 1.3vw, 50px);
+  padding: 0.2rem 1rem;
+  border-right: none;
+  color: black;
+  font-weight: 600;
+  position: relative;
+}
+
+nav a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2.5px;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+nav a:hover::before {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+nav a:hover {
+  transform: scale(1.25);
+}
+
+ul {
+  display: flex;
+  gap: 4vw;
+}
+
+/*------------ MAIN --------------------
+------------------------------------- */
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  padding-bottom: 2rem;
+  gap: 1rem;
+  background-image: url("../images/background.jpg");
+  background-color: rgba(0, 0, 0, 0.247);
+  background-blend-mode: color-burn;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main h2 {
+  font-size: clamp(30px, 4vw, 100px);
+  text-align: center;
+  z-index: 10;
+  color: white;
+  padding: 2rem 3rem;
+  font-weight: 500;
+  z-index: 10;
+}
+
+main a {
+  background: white;
+  border: none;
+  color: black;
+  z-index: 10;
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 10px 40px;
+  font-size: clamp(30px, 3vw, 50px);
+  width: fit-content;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/*------------ ACHIEVMENTS --------------------
+------------------------------------- */
+
+.achievements {
+  background-image: url("../images/background2.jpg");
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-content: center;
+  padding: 50px 10px;
+  position: relative;
+}
+
+.achievements::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 1;
+}
+.timeline {
+  padding: 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  align-items: center;
+  z-index: 2;
+}
+
+.achievement {
+  display: flex;
+  gap: 70px;
+  align-items: center;
+}
+
+.checkpoint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.achievement .title {
+  font-size: clamp(20px, 1.2vw, 50px);
+
+  text-align: center;
+  padding: 15px;
+  border: 0.3px solid rgba(255, 255, 255, 0.37);
+}
+
+.achievement .year {
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.37);
+  border-top: none;
+  position: relative;
+}
+
+.achievement .year::before {
+  content: "";
+  position: absolute;
+
+  height: 100px;
+  width: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -101px;
+  background-color: rgba(255, 255, 255, 0.37);
+}
+
+.achievement:last-child .year::before {
+  height: 0;
+}
+
+.achievement .desc {
+  max-width: 400px;
+  text-align: center;
+  font-size: clamp(20px, 1.2vw, 50px);
+}
+
+@media only screen and (max-width: 768px) {
+  .achievement .year::before {
+    height: 0;
+  }
+
+  .achievement {
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.17);
+    padding: 30px;
+    position: relative;
+  }
+
+  .achievement::before {
+    content: "";
+    position: absolute;
+    height: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -100px;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.37);
+  }
+  .achievement:last-child::before {
+    height: 0;
+  }
+}
+
+/*------------ CARS --------------------
+------------------------------------- */
+
+#cars {
+  padding: 50px 0;
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.car {
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+  border-radius: 2px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  padding: 20px 0;
+}
+
+.car img {
+  max-width: 39vw;
+  max-height: auto;
+}
+
+.car .title {
+  color: white;
+  font-size: clamp(32px, 1.5vw, 50px);
+  margin-top: -20px;
+}
+
+.car button {
+  color: whitesmoke;
+  padding: 10px 30px;
+  margin-top: 20px;
+  font-size: clamp(14px, 0.5vw, 50px);
+  border-radius: 2px;
+  position: relative;
+  border: 1px solid white;
+}
+.car button:hover {
+  color: rgb(93, 217, 255);
+}
+
+.information {
+  display: none;
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  z-index: -1;
+}
+
+.car button:hover .information {
+  opacity: 1;
+  top: -280px;
+  z-index: 100;
+  display: block;
+}
+
+.information > * {
+  color: black !important;
+}
+
+.information p {
+  max-width: 280px;
+
+  margin: 10px auto;
+}
+
+.information .price {
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 768px) {
+  #cars {
+    flex-direction: column;
+  }
+
+  .car img {
+    max-width: 80vw;
+  }
+}
+
+/*------------ CONTACT --------------------
+------------------------------------- */
+
+#contact {
+  display: flex;
+  background-color: black;
+  padding: 50px 0;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media only screen and (max-width: 768px) {
+  #contact {
+    flex-direction: column;
+  }
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  width: 300px;
+  margin: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+label {
+  color: white;
+  margin: 30px;
+}
+input::placeholder {
+  color: rgba(255, 255, 255, 0.24);
+}
+
+textarea {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  color: white;
+  height: 200px;
+}
+
+#contact img {
+  max-width: 500px;
+  height: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  #contact img {
+    max-width: 300px;
+  }
+}
+
+#contact button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: fit-content;
+  margin: 40px auto;
+  font-size: 25px;
+  padding: 10px 40px;
+}
+
+#contact button:hover {
+  border-color: rgb(0, 80, 133);
+}
+
+/*------------ FOOTER --------------------
+------------------------------------- */
+
+footer {
+  background-color: rgb(0, 0, 0);
+  display: grid;
+  place-content: center;
+  place-items: center;
+  color: white;
+  padding: 50px 0;
+  gap: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.274);
+}
+
+footer h3 {
+  font-size: 50px;
+}
+
+.icons {
+  font-size: 40px;
+}
+
+.icons ion-icon {
+  margin: 10px;
+  cursor: pointer;
+}
+
+.icons ion-icon:hover {
+  color: rgb(231, 231, 231);
+}
